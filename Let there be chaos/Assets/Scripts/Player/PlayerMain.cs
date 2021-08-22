@@ -23,8 +23,6 @@ public class PlayerMain : MonoBehaviour
         moveInput.Normalize();
         moveVelocity = new Vector2(moveInput.x * movementSpeed, moveInput.y * movementSpeed);
         rb.velocity = moveVelocity;
-
-
     }
 
 }
