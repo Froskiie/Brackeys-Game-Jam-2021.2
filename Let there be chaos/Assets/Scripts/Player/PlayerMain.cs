@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerMain : MonoBehaviour
 {
     public float movementSpeed;
-    private float moveInputX;
-    private float moveInputY;
+
+    private Vector2 moveInput;
+    private Vector2 moveVelocity;
+
 
     private Rigidbody2D rb;
 
@@ -17,9 +19,10 @@ public class PlayerMain : MonoBehaviour
 
     void FixedUpdate()
     {
-        moveInputX = Input.GetAxisRaw("Horizontal");
-        moveInputY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(moveInputX * movementSpeed, moveInputY * movementSpeed);
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveInput.Normalize();
+        moveVelocity = new Vector2(moveInput.x * movementSpeed, moveInput.y * movementSpeed);
+        rb.velocity = moveVelocity;
     }
 
 }
