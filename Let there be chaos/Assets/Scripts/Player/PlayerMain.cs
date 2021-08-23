@@ -20,7 +20,7 @@ public class PlayerMain : MonoBehaviour
     void FixedUpdate()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveInput.Normalize();
+        moveInput.Normalize(); // Normalisation du vecteur pour permettre un mouvement horizontal, vertical et diagonal uniforme.
         moveVelocity = new Vector2(moveInput.x * movementSpeed, moveInput.y * movementSpeed);
         rb.velocity = moveVelocity;
     }
