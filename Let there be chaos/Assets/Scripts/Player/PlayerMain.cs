@@ -15,7 +15,7 @@ public class PlayerMain : MonoBehaviour
 
     // HEALTH
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
 
     private SpriteRenderer sprite;
 
@@ -31,6 +31,7 @@ public class PlayerMain : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         currentHealth = maxHealth; // To update currentHealth depending on the value written in the editor
+        weapon = "No weapon";
     }
 
     private void Update()
