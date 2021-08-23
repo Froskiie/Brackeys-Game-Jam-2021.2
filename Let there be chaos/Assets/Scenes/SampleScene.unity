@@ -258,7 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  maxHealth: 0
+  maxHealth: 10
+  chaosSoulsCounter: 0
+  weapon: 
 --- !u!4 &199217444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6387864395093529441, guid: f9f9e719df75f044780480407d60596b, type: 3}
