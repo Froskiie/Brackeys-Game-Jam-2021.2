@@ -1,24 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class WeaponDisplayHUD : MonoBehaviour
+public class BulletClassic : MonoBehaviour
 {
-
-    public TextMeshProUGUI display;
-
-    public PlayerMain player;
-
     // Start is called before the first frame update
     void Start()
     {
-        display.text = "none";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        display.text = System.Convert.ToString(player.weaponType);
+        
     }
 }

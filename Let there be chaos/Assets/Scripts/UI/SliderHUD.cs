@@ -20,7 +20,6 @@ public class SliderHUD : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        print(player.currentHealth);
         if(slider.value > player.currentHealth+.1)
         {
             slider.value -= .1f;
