@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3591995739965830375}
   - component: {fileID: 4522226304236172446}
   - component: {fileID: 6650442864448134288}
+  - component: {fileID: 38405480769834917}
   m_Layer: 0
   m_Name: BotV1
   m_TagString: Untagged
@@ -95,3 +96,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35b6131c50a50f46ac7b0d79b63b0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  stoppingDistance: 0
+  retreatDistance: 0
+  player: {fileID: 0}
+  Self: {fileID: 0}
+--- !u!50 &38405480769834917
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172468012714053181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
