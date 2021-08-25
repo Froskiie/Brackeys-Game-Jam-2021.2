@@ -56,12 +56,12 @@ public class PlayerMain : MonoBehaviour
         {
             modifyPlayerHealth(-1);
         }
-        print(currentHealth);
+        //print(currentHealth);
         if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             modifyPlayerHealth(1);
         }
-        print(currentHealth);
+        //print(currentHealth);
 
         // Display weapon name
         if (weaponType == "")
