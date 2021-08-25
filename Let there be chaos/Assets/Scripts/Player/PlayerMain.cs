@@ -30,6 +30,7 @@ public class PlayerMain : MonoBehaviour
     [Header("Weapons")]
     public string weaponType;
 
+    public float weaponProjectileSpeed;
     public float weaponUseTime;
     public float weaponDamage;
 
