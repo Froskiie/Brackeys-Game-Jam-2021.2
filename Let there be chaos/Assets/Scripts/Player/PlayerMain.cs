@@ -23,7 +23,21 @@ public class PlayerMain : MonoBehaviour
     public int chaosSoulsCounter;
 
     // WEAPONS
+<<<<<<< HEAD
     public string weapon;
+=======
+    [Header("Weapons")]
+    public string weaponType;
+
+    public float weaponUseTime;
+    public float weaponDamage;
+
+    public bool weaponUseNormally;
+    
+    public GameObject weaponUseProjectile;
+
+    [HideInInspector] public Transform firePoint;
+>>>>>>> parent of 37fb1e2 (FINISHED SHOOTING SYSTEM)
 
     void Start()
     {

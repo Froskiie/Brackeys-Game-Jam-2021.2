@@ -136,6 +136,10 @@ GameObject:
   - component: {fileID: 45567283}
   - component: {fileID: 45567282}
   - component: {fileID: 45567286}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 45567287}
+>>>>>>> parent of 37fb1e2 (FINISHED SHOOTING SYSTEM)
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -268,7 +272,6 @@ Transform:
   m_PrefabInstance: {fileID: 6387864394930684485}
 =======
   weaponType: 
-  weaponProjectileSpeed: 0
   weaponUseTime: 0
   weaponDamage: 0
   weaponUseNormally: 0
@@ -287,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1451921212}
-  classic: {fileID: 1992243004114432892, guid: 8c2affb83f2986149b97654b53ab4923, type: 3}
+  classic: {fileID: 1006478305297379714, guid: 8c84708c603fbeb49849b2dcc2f42a59, type: 3}
   explosive: {fileID: 0}
   bouncy: {fileID: 0}
 --- !u!1 &86597758

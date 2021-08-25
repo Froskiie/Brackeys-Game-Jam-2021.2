@@ -8,11 +8,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Let there be chaos/Assets/Prefabs/BotV1.prefab
   - component: {fileID: 3591995739965830375}
   - component: {fileID: 4522226304236172446}
   - component: {fileID: 6650442864448134288}
   m_Layer: 0
   m_Name: BotV1
+=======
+  - component: {fileID: 7062476310645618705}
+  - component: {fileID: 3981167545457314383}
+  - component: {fileID: 3803812275312263494}
+  - component: {fileID: 8412035754174638147}
+  m_Layer: 0
+  m_Name: Main Wall
+>>>>>>> parent of 37fb1e2 (FINISHED SHOOTING SYSTEM):Let there be chaos/Assets/Prefabs/Walls/Main Wall.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
