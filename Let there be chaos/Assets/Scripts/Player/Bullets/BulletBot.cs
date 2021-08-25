@@ -24,7 +24,7 @@ public class BulletBot : MonoBehaviour
 
 
 
-
+        //Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         BaseBot BotStats = GameObject.FindGameObjectWithTag("Bot").GetComponent<BaseBot>();
         speed = BotStats.weaponProjectileSpeed;
@@ -33,15 +33,19 @@ public class BulletBot : MonoBehaviour
         
         
 
-        //Vector2 velocity = target - rb.position;
-        //velocity.Normalize();
-        //rb.velocity = velocity * speed;
+       // Vector2 velocity = target - rb.position;
+       // velocity.Normalize();
+        //rb.velocity = velocity * speed * Time.deltaTime;
 
         Invoke("DestroyBullet", lifeTime);
     }
    void Update()
     {
         self.position = Vector2.MoveTowards(self.position, target, speed * Time.deltaTime);
+        if (transform.position.x == target.x && transform.position.y == target.y)
+        {
+            DestroyBullet();
+        }
     }
 
     void DestroyBullet()
@@ -55,6 +59,16 @@ public class BulletBot : MonoBehaviour
         if (collision.gameObject.layer == 11)
         {
             DestroyBullet();
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerMain playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMain>();
+            playerHealth.modifyPlayerHealth(-1);
+            DestroyBullet();
+
+
+
         }
     }
 }
