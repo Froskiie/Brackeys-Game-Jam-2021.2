@@ -25,10 +25,29 @@ public class PlayerShootingSystem : MonoBehaviour
         // Weapon stats
         if(player.weaponType == "Pistol")
         {
-            player.weaponUseTime = 0.2f;
+            player.weaponUseTime = 0.4f;
             player.weaponUseProjectile = classic;
-            player.weaponDamage = 1f;
             player.weaponUseNormally = true;
+
+            player.weaponProjectileSpeed = 100f;
+            player.weaponDamage = 1f;
+        } else if (player.weaponType == "Rifle")
+        {
+            player.weaponUseTime = 0.15f;
+            player.weaponUseProjectile = classic;
+            player.weaponUseNormally = true;
+
+            player.weaponProjectileSpeed = 100f;
+            player.weaponDamage = 0.5f;
+        }
+        else if (player.weaponType == "Machinegun")
+        {
+            player.weaponUseTime = 0.05f;
+            player.weaponUseProjectile = classic;
+            player.weaponUseNormally = true;
+
+            player.weaponProjectileSpeed = 100f;
+            player.weaponDamage = 0.05f;
         }
 
         // Weapon use
@@ -40,9 +59,7 @@ public class PlayerShootingSystem : MonoBehaviour
                 counter = 0;
                 if (player.weaponUseNormally)
                 {
-                    GameObject bullet = Instantiate(player.weaponUseProjectile, firePoint.position, firePoint.rotation);
-                    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.angularVelocity = rb.rotation;
+                    Instantiate(player.weaponUseProjectile, firePoint.position, firePoint.rotation);
                 }
             }
         }

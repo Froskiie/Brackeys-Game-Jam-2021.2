@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerMain : MonoBehaviour
 {
 
-    // MOVEMENT
-    public float movementSpeed;
-
+    private Vector2 mousePosition;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
 
-    private Rigidbody2D rb;
+    public Camera cam;
+    
+    [HideInInspector] public Rigidbody2D rb;
+
+    [Header("Stats")]
+    // MOVEMENT
+    public float movementSpeed;
 
     // HEALTH
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
 
     private SpriteRenderer sprite;
 
@@ -23,12 +27,10 @@ public class PlayerMain : MonoBehaviour
     public int chaosSoulsCounter;
 
     // WEAPONS
-<<<<<<< HEAD
-    public string weapon;
-=======
     [Header("Weapons")]
     public string weaponType;
 
+    public float weaponProjectileSpeed;
     public float weaponUseTime;
     public float weaponDamage;
 
@@ -37,10 +39,10 @@ public class PlayerMain : MonoBehaviour
     public GameObject weaponUseProjectile;
 
     [HideInInspector] public Transform firePoint;
->>>>>>> parent of 37fb1e2 (FINISHED SHOOTING SYSTEM)
 
     void Start()
     {
+        firePoint = GetComponentInChildren<Transform>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
 
@@ -60,6 +62,12 @@ public class PlayerMain : MonoBehaviour
             modifyPlayerHealth(1);
         }
         print(currentHealth);
+
+        // Display weapon name
+        if (weaponType == "")
+        {
+            weaponType = "No weapon";
+        }
     }
 
     void FixedUpdate()
@@ -68,7 +76,13 @@ public class PlayerMain : MonoBehaviour
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveInput.Normalize(); // Normalisation du vecteur pour permettre un mouvement horizontal, vertical et diagonal uniforme.
         moveVelocity = new Vector2(moveInput.x * movementSpeed, moveInput.y * movementSpeed);
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        rb.velocity = moveVelocity;
+
+        // Player Rotation
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDirection = mousePosition - rb.position;
+        float angle = Mathf.Atan2(lookDirection.x, lookDirection.y) * -Mathf.Rad2Deg;
+        rb.rotation = angle;
     }
 
     public void modifyPlayerHealth(int value)
